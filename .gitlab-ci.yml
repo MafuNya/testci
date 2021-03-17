@@ -1,0 +1,16 @@
+image: local-registry.inner.buaaoo.top/image-dev/java:8u201
+
+stages:
+  - build
+  - test
+
+before_script:
+  - java -version
+  - javac -version
+  - mvn -v
+
+mvn_build:
+  stage: build
+  script:
+    - echo "start"
+    - mvn compile
